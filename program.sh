@@ -27,3 +27,19 @@ then
 
 echo "file isn't found"
  fi
+
+clear
+
+tput setaf 5
+
+echo "==================================="
+tput setaf 4 
+echo " Welcome To Hangman Game"
+tput setaf 3
+echo ""
+echo "I will pick a secret word from the dictionary."
+echo "You guess it one letter at a time."
+echo "Each wrong guess adds a piece to the hangman figure!"
+tput setaf 5
+echo "==================================="
+

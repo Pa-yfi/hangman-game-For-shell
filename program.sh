@@ -30,17 +30,17 @@ echo "file isn't found"
 
 clear
 
-tput setaf 5
+tput setaf 5 #purple 
 
 echo "==================================="
 tput setaf 4 
 echo " Welcome To Hangman Game"
-tput setaf 3
+tput setaf 3 
 echo ""
 echo "I will pick a secret word from the dictionary."
 echo "You guess it one letter at a time."
 echo "Each wrong guess adds a piece to the hangman figure!"
-tput setaf 5
+tput setaf 5 #purple
 echo "==================================="
 
 
@@ -58,7 +58,7 @@ do
         read -p "Word length (minimum 5): " LENGTH
         if ! [ "$LENGTH" -ge 5 ] 2>/dev/null
         then
-            tput setaf 1    # Red text
+            tput setaf 1    # Red 
             echo "Please enter a number that is 5 or more."
         fi
     done
@@ -67,11 +67,11 @@ do
     MAX=0
     until [ "$MAX" -ge 1 ] 2>/dev/null
     do
-        tput setaf 15   # White text
+        tput setaf 15   # White 
         read -p "Maximum wrong guesses (minimum 1): " MAX
         if ! [ "$MAX" -ge 1 ] 2>/dev/null
         then
-            tput setaf 1    # Red text
+            tput setaf 1    # Red 
             echo "Please enter a number that is 1 or more."
         fi
     done

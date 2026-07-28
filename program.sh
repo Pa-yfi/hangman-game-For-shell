@@ -65,10 +65,10 @@ do
 
     # Ask for the maximum number of wrong guesses (1 or more)
     MAX=0
-    until [ "$MAX" -ge 1 ] 2>/dev/null
+    until [ "$MAX" -ge 20 ] 2>/dev/null
     do
         tput setaf 15   # White 
-        read -p "Maximum wrong guesses (minimum 1): " MAX
+        read -p "Maximum wrong guesses (minimum 10): " MAX
         if ! [ "$MAX" -ge 1 ] 2>/dev/null
         then
             tput setaf 1    # Red 

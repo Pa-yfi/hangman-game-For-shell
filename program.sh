@@ -91,3 +91,29 @@ do
     # Un-comment this line when debugging!
     # echo "NOTE: the secret word is $WORD"
 
+ # Draw the hangman figure - one body part per wrong guess
+        clear
+        tput setaf 6    # Cyan text
+        echo "  +---+"
+        echo "  |   |"
+        if [ $WRONG -eq 0 ]
+        then
+            echo "      |"
+            echo "      |"
+            echo "      |"
+        elif [ $WRONG -eq 1 ]
+        then
+            echo "  O   |"
+            echo "      |"
+            echo "      |"
+        elif [ $WRONG -eq 2 ]
+        then
+            echo "  O   |"
+            echo "  |   |"
+            echo "      |"
+        elif [ $WRONG -eq 3 ]
+        then
+            echo "  O   |"
+            echo " /|   |"
+            echo "      |"
+

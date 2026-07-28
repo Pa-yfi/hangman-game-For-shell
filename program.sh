@@ -76,4 +76,18 @@ do
         fi
     done
 
+ # Pick a random word of that length from the dictionary.
+    # The grep pattern matches lowercase words of exactly LENGTH letters.
+    WORD=$(grep "^[a-z]\{$LENGTH\}$" $DICT | shuf -n 1)
+
+    # Make sure we actually found a word of that length
+    if [ -z "$WORD" ]
+    then
+        tput setaf 1    # Red text
+        echo "Error: no $LENGTH-letter words in the dictionary - try another length."
+        continue
+    fi
+
+    # Un-comment this line when debugging!
+    # echo "NOTE: the secret word is $WORD"
 

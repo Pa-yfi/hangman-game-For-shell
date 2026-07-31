@@ -197,4 +197,14 @@ do
             ((WRONG++))
           fi
              done
+      tput setaf 15   # White text
+    echo
+    read -p "Do you want to play again (Y/N)? " PLAY
+    echo
+done
 
+tput setaf 5    # Purple 
+echo "You played $GAMES games and won $WINS times ($((WINS*100/GAMES))% success)."
+
+echo
+tput sgr0  

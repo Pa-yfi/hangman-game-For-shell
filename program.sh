@@ -116,4 +116,28 @@ do
             echo "  O   |"
             echo " /|   |"
             echo "      |"
+   elif [ $WRONG -eq 4 ]
+        then
+            echo "  O   |"
+            echo " /|\\  |"
+            echo "      |"
+        elif [ $WRONG -eq 5 ]
+        then
+            echo "  O   |"
+            echo " /|\\  |"
+            echo " /    |"
+        else
+            echo "  O   |"
+            echo " /|\\  |"
+            echo " / \\  |"
+        fi
+        echo "      |"
+        echo "========="
+        echo
+
+        tput setaf 15   # White text
+        echo "Word:    $SHOW"
+        echo "Guessed: $GUESSED"
+        echo "Wrong:   $WRONG / $MAX"
+        echo
 

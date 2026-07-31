@@ -188,4 +188,13 @@ do
             continue
         fi
 
+       # Remember this guess
+        GUESSED="$GUESSED$GUESS"
+
+         # If the letter is not in the word, it is a wrong guess
+        if ! echo "$WORD" | grep -q "$GUESS"
+          then
+            ((WRONG++))
+          fi
+             done
 

@@ -160,3 +160,32 @@ do
             echo "You LOSE! The word was $WORD."
             break
         fi
+
+
+      
+        # Read the next guess
+        tput setaf 15   # White text
+        read -p "Guess a letter: " GUESS
+
+        # Change uppercase to lowercase so 'A' works like 'a'
+        GUESS=$(echo $GUESS | tr A-Z a-z)
+
+        # The guess must be exactly one letter from a to z
+        if [[ "$GUESS" != [a-z] ]]
+        then
+            tput setaf 1    # Red text
+            echo "Please enter one letter (a-z)."
+            sleep 1
+            continue
+        fi
+
+        # Reject a letter that was already guessed
+        if echo "$GUESSED" | grep -q "$GUESS"
+        then
+            tput setaf 1    # Red text
+            echo "You already tried '$GUESS'."
+            sleep 1
+            continue
+        fi
+
+

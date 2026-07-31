@@ -135,9 +135,28 @@ do
         echo "========="
         echo
 
-        tput setaf 15   # White text
+        tput setaf 15   
         echo "Word:    $SHOW"
         echo "Guessed: $GUESSED"
         echo "Wrong:   $WRONG / $MAX"
         echo
 
+        # Did the user win?
+        if [ "$FOUND" == "Y" ]
+        then
+            # Each unused guess is worth 10 points
+            SCORE=$(( (MAX - WRONG) * 10 ))
+            ((WINS++))
+            tput setaf 10   # Green 
+            echo "You WIN! The word was $WORD."
+            echo "Score this game: $SCORE points"
+            break
+        fi
+
+        # Did the user lose? (too many wrong guesses)
+        if [ $WRONG -ge $MAX ]
+        then
+            tput setaf 11   # Yellow 
+            echo "You LOSE! The word was $WORD."
+            break
+        fi

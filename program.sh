@@ -13,7 +13,7 @@ WINS=0      # How many games the user has won
 BLANK="_ "  # One hidden letter.  We keep this in a variable because
             # writing "$SHOW_ " would look like a variable named SHOW_
 
-# The wordlist - change this path if your file lives somewhere else
+# ---------- The wordlist ------------
 DICT="/usr/share/dict/words"
 
 # Make sure the wordlist exists before we start
